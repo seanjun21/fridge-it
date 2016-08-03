@@ -9,24 +9,29 @@ var IngredientList = React.createClass( {
     var ingredientName = this.refs.ingredientName.value;
     // TODO: Add the repository to the state
     this.props.dispatch( actions.addIngredient( ingredientName ) );
+    this.props.dispatch( actions.fetchRecipe( ingredientName ) );
   },
   render: function() {
     var ingredients = this.props.state.searchIngredients.map( function( ingredient ) {
-      return <Ingredient ingredient={ ingredient } key={ ingredient }/>;
+      return ( <li><span className="arrow"></span><Ingredient className="ingredient" ingredient={ ingredient } key={ ingredient }/></li> );
     } );
     var newRecipe = "";
     if ( this.props.state.recipeResult !== null ) {
-      newRecipe = <div className="ingredient-recipe">
-          <a href={this.props.state.recipeResult.url}>{this.props.state.recipeResult.name}</a>
-        </div>
+      newRecipe = <div className="ingredient-recipe">{this.props.state.recipeResult}</div>
     }
     return (
       <div className="ingredient-list">
-        <input type="text" ref="ingredientName" />
-        <button type="button" onClick={this.addIngredient}>
-          Fridge-It
-        </button>
-        {ingredients}
+        <div className="top-bar">
+          <div className="search-container">
+            <input className="input-box" type="text" ref="ingredientName" />
+            <button type="button" onClick={this.addIngredient}>
+            Fridge-It
+            </button>
+          </div>
+          <ul className="ingredients-container">
+            {ingredients}
+          </ul>
+        </div>
         {newRecipe}
       </div>
     );

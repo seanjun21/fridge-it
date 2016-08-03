@@ -13,7 +13,7 @@
     "watch:html": "npm run build:html && chokidar index.html -c 'npm run build:html'",
     "clean:html": "rm -f build/index.html",
     "build:css": "npm run clean:css && lessc --source-map src/css/style.less build/$npm_package_name.$npm_package_version.css",
-    "watch:css": "npm run build:css && chokidar 'css/**/*.less' -c 'npm run build:css'",
+    "watch:css": "npm run build:css && chokidar 'src/css/**/*.less' -c 'npm run build:css'",
     "clean:css": "rm -f build/$npm_package_name.$npm_package_version.css build/$npm_package_name.$npm_package_version.css.map",
     "build:js": "npm run clean:js && webpack",
     "watch:js": "npm run build:js && webpack --watch",
