@@ -1,4 +1,5 @@
 var fetch = require( 'isomorphic-fetch' );
+var _ = require( 'lodash' );
 
 var ADD_INGREDIENT = 'ADD_INGREDIENTS';
 var addIngredient = function( ingredient ) {
@@ -33,8 +34,8 @@ var fetchRecipe = function( ingredient ) {
         method: 'GET'
       } ).then( function( response ) {
         if ( response.state < 200 || response.status >= 300 ) {
-          var error = new Error( response.statusText )
-          error.response = response
+          var error = new Error( response.statusText );
+          error.response = response;
           throw error;
         }
         return response;
@@ -43,9 +44,16 @@ var fetchRecipe = function( ingredient ) {
         return response.json();
       } )
       .then( function( data ) {
-        var recipe = data.name;
+        var recipes = _.map( data, function( recipe ) {
+          return {
+            name: recipe.name,
+            url: recipe.url
+          };
+        } );
+        console.log( recipes, 'RECIPES' );
+
         return dispatch(
-          fetchRecipeSuccess( ingredient, recipe )
+          fetchRecipeSuccess( ingredient, recipes )
         );
       } )
       .catch( function( error ) {

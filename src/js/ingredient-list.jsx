@@ -7,17 +7,26 @@ var Ingredient = require( './ingredient' );
 var IngredientList = React.createClass( {
   addIngredient: function() {
     var ingredientName = this.refs.ingredientName.value;
+    var allIngredients = this.props.state.searchIngredients.slice();
+    allIngredients.push( ingredientName );
+    var concatIngredients = allIngredients.join( '|' );
+
     // TODO: Add the repository to the state
     this.props.dispatch( actions.addIngredient( ingredientName ) );
-    this.props.dispatch( actions.fetchRecipe( ingredientName ) );
+    this.props.dispatch( actions.fetchRecipe( concatIngredients ) );
   },
   render: function() {
     var ingredients = this.props.state.searchIngredients.map( function( ingredient ) {
-      return ( <li><span className="arrow"></span><Ingredient className="ingredient" ingredient={ ingredient } key={ ingredient }/></li> );
+      return (
+        <li key={ ingredient }>
+          <span className="arrow"></span>
+          <Ingredient className="ingredient" ingredient={ ingredient } />
+        </li>
+      );
     } );
     var newRecipe = "";
     if ( this.props.state.recipeResult !== null ) {
-      newRecipe = <div className="ingredient-recipe">{this.props.state.recipeResult}</div>
+      newRecipe = <li>{this.props.state.recipeResult}</li>
     }
     return (
       <div className="ingredient-list">
@@ -32,7 +41,9 @@ var IngredientList = React.createClass( {
             {ingredients}
           </ul>
         </div>
-        {newRecipe}
+        <ul className="ingredient-recipe">
+          {newRecipe}          
+        </ul>
       </div>
     );
   }
