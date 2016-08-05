@@ -30,6 +30,7 @@ var Fridge = React.createClass( {
   delIngredient: function( event ) {
     var ingredientDel = event.currentTarget.textContent;
     this.props.dispatch( actions.delIngredient( ingredientDel ) );
+    this.props.dispatch( actions.fetchRecipe( this.props.state.searchIngredients ) );
   },
 
   handleKeyPress: function( e ) {
@@ -62,10 +63,8 @@ var Fridge = React.createClass( {
       <div className="fridge">
         <div className="top-bar">
           <div className="search-container">
-            <input type="text" ref="ingredientName" onKeyPress={this.handleKeyPress} placeholder="Add Ingredient"/>
-            <button type="submit" onClick={this.addIngredient}>
-            Fridge-It
-            </button>
+            <input type="text" ref="ingredientName" onKeyPress={this.handleKeyPress} placeholder="Ingredients?"/>
+            <button type="submit" onClick={this.addIngredient}></button>
           </div>
           <ul className="ingredients-list">
             {ingredients}

@@ -1,12 +1,34 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
-@import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
 body {
     font-family: Arial, Helvetica, sans-serif;
+    content: "";
+    background: url(../src/image/background.jpg);
+    top: 3em;
+    left: 4em;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }
 
 .fridge {
     margin: 0 auto;
-    max-width: 50em;
+    margin-bottom: 3em;
+    max-width: 45em;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 10;
+    padding: 10px;
+    -moz-box-shadow: 0px 0px 7px #000000;
+    -webkit-box-shadow: 0px 0px 7px #000000;
+    box-shadow: 0px 0px 7px #000000;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.top-bar {
+    padding-bottom: 1.2em;
 }
 
 ul.ingredients-list {
@@ -15,7 +37,7 @@ ul.ingredients-list {
     height: 38px;
     list-style-type: none;
     margin-top: 4em;
-    margin-left: 2em;
+    margin-left: 1em;
     padding: 0;
     li {
         font-family: Helvetica, Arial, sans-serif;
@@ -86,11 +108,13 @@ ul.ingredients-list {
 }
 
 ul.recipes-list {
+    margin-bottom: 0.5em;
     list-style-type: none;
     li {
         font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
         &:last-child {
             border: none;
+            padding-bottom: 1em;
         }
         a {
             text-decoration: none;
@@ -144,7 +168,7 @@ input[type="text"]:focus:hover {
 }
 
 input[type="text"]:focus {
-    width: 400px;
+    width: 5.2em;
     z-index: 1;
     border-bottom: 1px solid #BBB;
     cursor: text;
