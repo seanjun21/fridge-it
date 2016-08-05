@@ -1,7 +1,6 @@
 var actions = require( './actions' );
 var _ = require( 'lodash' );
 
-// var initialIngredientState = [];
 var initialIngredientState = {
   recipeResult: null,
   searchIngredients: []
@@ -22,14 +21,6 @@ var ingredientReducer = function( state, action ) {
     _.remove( state.searchIngredients, function( n ) {
       return n === action.ingredient;
     } )
-
-    console.log( state.searchIngredients, '_____searchIngredientsArr' );
-    // _.filter( state.recipeResult, function( o ) {
-    //   var patt = new RegExp( state.searchIngredients[ 0 ], 'i' );
-    //   var res = patt.test( o.ingredients );
-    //   return res;
-    // } );
-    console.log( state.recipeResult, '____RecipeRes' );
 
     return Object.assign( {}, state, {
       recipeResult: state.recipeResult,
