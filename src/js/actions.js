@@ -9,6 +9,14 @@ var addIngredient = function( ingredient ) {
   };
 };
 
+var DEL_INGREDIENT = 'DEL_INGREDIENT';
+var delIngredient = function( ingredient ) {
+  return {
+    type: DEL_INGREDIENT,
+    ingredient: ingredient,
+  }
+}
+
 var FETCH_RECIPE_SUCCESS = 'FETCH_RECIPE_SUCCESS';
 var fetchRecipeSuccess = function( ingredient, recipe ) {
   return {
@@ -47,10 +55,11 @@ var fetchRecipe = function( ingredient ) {
         var recipes = _.map( data, function( recipe ) {
           return {
             name: recipe.name,
-            url: recipe.url
+            url: recipe.url,
+            ingredients: recipe.ingredients
           };
         } );
-        console.log( recipes, 'RECIPES' );
+        // console.log( recipes, 'RECIPES' );
 
         return dispatch(
           fetchRecipeSuccess( ingredient, recipes )
@@ -66,6 +75,9 @@ var fetchRecipe = function( ingredient ) {
 
 exports.ADD_INGREDIENT = ADD_INGREDIENT;
 exports.addIngredient = addIngredient;
+exports.DEL_INGREDIENT = DEL_INGREDIENT;
+exports.delIngredient = delIngredient;
+
 
 exports.FETCH_RECIPE_SUCCESS = FETCH_RECIPE_SUCCESS;
 exports.fetchRecipeSuccess = fetchRecipeSuccess;

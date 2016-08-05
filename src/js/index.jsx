@@ -3,12 +3,12 @@ var ReactDOM = require( 'react-dom' );
 var Provider = require( 'react-redux' ).Provider;
 
 var store = require( './store' );
-var IngredientList = require( './ingredient-list' );
+var Fridge = require( './fridge' );
 
 document.addEventListener( 'DOMContentLoaded', function() {
   ReactDOM.render(
     <Provider store={store}>
-      <IngredientList />
+      <Fridge />
     </Provider>,
     document.getElementById( 'app' ) );
 } );

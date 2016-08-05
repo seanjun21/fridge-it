@@ -1,20 +1,21 @@
-.ingredient-list {
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.fridge {
     margin: 0 auto;
     max-width: 50em;
 }
 
-.search-container {
-    display: inline-block;
-    float: left;
-    padding: 25.5px 0;
-}
-
-ul.ingredients-container {
+ul.ingredients-list {
     display: inline-block;
     background-color: white;
     height: 38px;
     list-style-type: none;
-    margin-left: 1em;
+    margin-top: 4em;
+    margin-left: 2em;
     padding: 0;
     li {
         font-family: Helvetica, Arial, sans-serif;
@@ -84,6 +85,90 @@ ul.ingredients-container {
     }
 }
 
-.display-panel {
-    background-color: red;
+ul.recipes-list {
+    list-style-type: none;
+    li {
+        font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+        &:last-child {
+            border: none;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+            -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+            -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+            -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+            -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+            transition: font-size 0.3s ease, background-color 0.3s ease;
+            display: block;
+            &:hover {
+                font-size: 30px;
+                background: #f6f6f6;
+            }
+        }
+    }
+}
+
+.search-container {
+    margin: 50px 0px;
+    display: inline-block;
+    position: relative;
+    height: 60px;
+    float: right;
+    padding: 0;
+}
+
+input[type="text"] {
+    height: 60px;
+    font-size: 55px;
+    display: inline-block;
+    font-family: "Lato";
+    font-weight: 100;
+    border: none;
+    outline: none;
+    color: #555;
+    padding: 3px;
+    padding-right: 60px;
+    width: 0px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    z-index: 3;
+    transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+    cursor: pointer;
+}
+
+input[type="text"]:focus:hover {
+    border-bottom: 1px solid #BBB;
+}
+
+input[type="text"]:focus {
+    width: 400px;
+    z-index: 1;
+    border-bottom: 1px solid #BBB;
+    cursor: text;
+}
+
+button[type="submit"] {
+    height: 67px;
+    width: 63px;
+    display: inline-block;
+    color: red;
+    float: right;
+    background: url(../src/image/download.png) center center no-repeat;
+    text-indent: -10000px;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    cursor: pointer;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: opacity .4s ease;
+}
+
+input[type="submit"]:hover {
+    opacity: 0.8;
 }

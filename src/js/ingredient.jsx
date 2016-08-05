@@ -11,6 +11,4 @@ var Ingredient = React.createClass( {
   }
 } );
 
-var Container = connect()( Ingredient );
-
-module.exports = Container;
+module.exports = Ingredient;
