@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.static('./build/'));
 
 var mongoose = require('mongoose');
-var DATA = require('./src/js/data.js');
+var DATA = require('./build/data.js');
 var _ = require('lodash');
 
 /*---------- GET REQUESTS ----------*/
