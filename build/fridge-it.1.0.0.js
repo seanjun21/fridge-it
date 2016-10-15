@@ -23105,7 +23105,7 @@
 	
 	var fetchRecipe = function fetchRecipe(ingredient) {
 	  return function (dispatch) {
-	    var url = 'http://localhost:9000/recipes/' + ingredient;
+	    var url = '/recipes/' + ingredient;
 	    return fetch(url, {
 	      method: 'GET'
 	    }).then(function (response) {

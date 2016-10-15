@@ -11,8 +11,8 @@
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "mkdir": "mkdir -p build",
-    "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:js && npm run build:css && npm run build:img && npm run build:data",
-    "watch": "npm run watch:html & npm run watch:js & npm run watch:css & npm run watch:img & npm run watch:data",
+    "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:js && npm run build:css && npm run build:img",
+    "watch": "npm run watch:html & npm run watch:js & npm run watch:css & npm run watch:img",
     "clean": "rm -rf build",
     "build:html": "npm run clean:html && cp src/index.html build/",
     "watch:html": "npm run build:html && chokidar index.html -c 'npm run build:html'",
@@ -25,10 +25,7 @@
     "clean:js": "rm -f build/$npm_package_name.$npm_package_version.js build/$npm_package_name.$npm_package_version.js.map",
     "build:img": "npm run clean:img && cp -r src/img/ build/",
     "clean:img": "rm -rf build/img/",
-    "watch:img": "npm run build:img && webpack --watch",
-    "build:data": "npm run clean:data && cp data.js build/",
-    "watch:data": "npm run build:data && chokidar data.js -c 'npm run build:data'",
-    "clean:data": "rm -f build/data.js"
+    "watch:img": "npm run build:img && webpack --watch"
   },
   "repository": {
     "type": "git",

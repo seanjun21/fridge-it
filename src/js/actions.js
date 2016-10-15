@@ -37,7 +37,7 @@ var fetchRecipeError = function( ingredient, error ) {
 
 var fetchRecipe = function( ingredient ) {
   return function( dispatch ) {
-    var url = 'http://localhost:9000/recipes/' + ingredient;
+    var url = '/recipes/' + ingredient;
     return fetch( url, {
         method: 'GET'
       } ).then( function( response ) {
