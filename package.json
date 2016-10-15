@@ -1,6 +1,10 @@
 {
   "name": "fridge-it",
   "version": "1.0.0",
+  "engines": {
+    "node": "6.8.1",
+    "npm": "3.10.8"
+  },
   "description": "",
   "main": "src/js/index.jsx",
   "scripts": {

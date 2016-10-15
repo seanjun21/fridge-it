@@ -10,7 +10,7 @@ module.exports = {
   entry: path.resolve( __dirname, packageData.main ),
   output: {
     path: path.resolve( __dirname, 'build' ),
-    filename: filename.join( '.' ),
+    filename: filename.join( '.' )
   },
   devtool: 'source-map',
   module: {
