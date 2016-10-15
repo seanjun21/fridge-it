@@ -2,7 +2,9 @@
 var express = require( 'express' );
 var cors = require( 'cors' );
 var app = express();
+
 app.use( cors() );
+app.use(express.static('./build'));
 
 var mongoose = require( 'mongoose' );
 var DATA = require( './data.js' );
