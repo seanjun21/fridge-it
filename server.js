@@ -2,10 +2,10 @@
 var express = require('express');
 var cors = require('cors');
 var app = express();
-
 app.use(cors());
-app.use(express.static('./build'));
+app.use(express.static('./build/'));
 
+var mongoose = require('mongoose');
 var DATA = require('./data.js');
 var _ = require('lodash');
 
@@ -33,21 +33,7 @@ app.get('/recipes/:ingredient', cors(), function (request, response) {
     response.status(200).json(test2);
 });
 
-/*------ SERVER SET-UP ------*/
-var runServer = function (callback) {
-    var port = process.env.PORT || 9000;
-    var server = app.listen(port, function () {
-        console.log('Listening on port ' + port);
-        if (callback) {
-            callback(server);
-        }
-    });
-};
 
-/*-- RUN SERVER --*/
-if (require.main === module) {
-    runServer();
-}
+app.listen(process.env.PORT || 9000);
 
 exports.app = app;
-exports.runServer = runServer;
