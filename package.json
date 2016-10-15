@@ -25,7 +25,7 @@
     "build:img": "npm run clean:img && cp -r src/img/ build/",
     "clean:img": "rm -rf build/img/",
     "watch:img": "npm run build:img && webpack --watch",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build && npm run start"
   },
   "repository": {
     "type": "git",
