@@ -13,9 +13,9 @@ var DEL_INGREDIENT = 'DEL_INGREDIENT';
 var delIngredient = function( ingredient ) {
   return {
     type: DEL_INGREDIENT,
-    ingredient: ingredient,
+    ingredient: ingredient
   }
-}
+};
 
 var FETCH_RECIPE_SUCCESS = 'FETCH_RECIPE_SUCCESS';
 var fetchRecipeSuccess = function( ingredient, recipe ) {
@@ -41,7 +41,7 @@ var fetchRecipe = function( ingredient ) {
     return fetch( url, {
         method: 'GET'
       } ).then( function( response ) {
-        if ( response.state < 200 || response.status >= 300 ) {
+        if ( response.status < 200 || response.status >= 300 ) {
           var error = new Error( response.statusText );
           error.response = response;
           throw error;
