@@ -34,7 +34,20 @@ app.get( '/recipes/:ingredient', cors(), function( request, response ) {
   response.status( 200 ).json( test2 );
 } );
 
+/*------ SERVER SET-UP ------*/
+var runServer = function(callback) {
+  var port = process.env.PORT || 9000;
+  var server = app.listen(port, function() {
+    console.log('Listening on port ' + port);
+    if (callback) {
+      callback(server);
+    }
+  });
+};
 
-app.listen( process.env.PORT || 9000 );
+/*-- RUN SERVER --*/
+if (require.main === module) {
+  runServer();
+}
 
 exports.app = app;
