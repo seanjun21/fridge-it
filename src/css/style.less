@@ -18,9 +18,9 @@ body {
     background-color: white;
     z-index: 10;
     padding: 10px;
-    -moz-box-shadow: 0px 0px 7px #000000;
-    -webkit-box-shadow: 0px 0px 7px #000000;
-    box-shadow: 0px 0px 7px #000000;
+    -moz-box-shadow: 0 0 7px #000000;
+    -webkit-box-shadow: 0 0 7px #000000;
+    box-shadow: 0 0 7px #000000;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
@@ -50,7 +50,6 @@ ul.ingredients-list {
         text-decoration: none;
         -webkit-transition: right 0.2s ease-in;
         -moz-transition: right 0.2s ease-in;
-        -ms-transition: right 0.2s ease-in;
         background: #d63838;
         & .ingredient {
             display: inline-block;
@@ -62,7 +61,7 @@ ul.ingredients-list {
             content: "";
             display: inline-block;
             border-radius: 20px;
-            box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
             margin: 0 5px 0 0;
         }
         &:after {
@@ -70,7 +69,7 @@ ul.ingredients-list {
             border-radius: 5px;
             width: 100%;
             height: 100%;
-            box-shadow: inset 0px 5px 40px rgba(255, 255, 255, 0.4), 0px 0px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: inset 0 5px 40px rgba(255, 255, 255, 0.4), 0 0 10px rgba(0, 0, 0, 0.3);
             position: absolute;
             left: 0;
             top: 0;
@@ -86,7 +85,6 @@ ul.ingredients-list {
             -webkit-transition: right 0.2s ease-in;
             right: -20px;
             top: -12px;
-            display: inline-block;
         }
         &:hover {
             position: relative;
@@ -100,7 +98,7 @@ ul.ingredients-list {
         }
         &:active {
             &:after {
-                box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.3), 0px 0px 5px rgba(0, 0, 0, 0.2);
+                box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3), 0 0 5px rgba(0, 0, 0, 0.2);
             }
         }
     }
@@ -121,7 +119,6 @@ ul.recipes-list {
             -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
             -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
             -o-transition: font-size 0.3s ease, background-color 0.3s ease;
-            -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
             transition: font-size 0.3s ease, background-color 0.3s ease;
             display: block;
             &:hover {
@@ -188,7 +185,6 @@ button[type="submit"] {
     z-index: 2;
     cursor: pointer;
     opacity: 0.4;
-    cursor: pointer;
     transition: opacity .4s ease;
 }
 
