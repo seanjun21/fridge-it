@@ -6,7 +6,7 @@ body {
   top: 3em;
   left: 4em;
   bottom: 0;
-  right: 0;
+  right: 4em;
   position: absolute;
   z-index: -1;
 }
