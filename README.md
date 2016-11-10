@@ -4,11 +4,10 @@
 
 'Fridge-It' is a **cooking app**, which allows users to search for recipes based on combined ingredients (up to 2 ingredients).
 
-## Installation
+## Installation (source code)
 
 1. Pull from github repo
-  - https://github.com/seanjun21/fridge-it-front-end (front-end)
-  - https://github.com/seanjun21/fridge-it-back-end-DEMO-PROTOTYPE (back-end)
+  - https://github.com/seanjun21/fridge-it-front-end
 2. Install the app using 'npm install' command.
 3. Build the app using 'npm run build' command.
 4. Setup server from back-end server using 'node server.js' command.
